@@ -1,0 +1,31 @@
+version: 4.2.12
+session: 67a9c0e339d28eca2b0a44fa
+steps:
+  - prompt: Focus the browser window.
+    commands:
+      - command: hover-text
+        text: Software Outsourcing Company
+        description: main heading on the webpage
+        action: click
+  - prompt: Click on the "English" language option.
+    commands:
+      - command: hover-text
+        text: English
+        description: language option in the top right of the header
+        action: click
+  - prompt: Assert that the webpage content is displayed in English.
+    commands:
+      - command: assert
+        expect: the webpage contains the text "Software Outsourcing Company"
+  - prompt: Click on the "Deutsch" language option.
+    commands:
+      - command: hover-text
+        text: Deutsch
+        description: language option in the top right of the header
+        action: click
+  - prompt: >-
+      Assert that the webpage content is displayed in German.  # Use the content
+      of the file from the environment
+    commands:
+      - command: assert
+        expect: the webpage contains the text "Software-Outsourcing-Unternehmen"
