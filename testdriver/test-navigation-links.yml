@@ -1,0 +1,29 @@
+version: 4.2.12
+session: 67a9c0e039d28eca2b0a44f7
+steps:
+  - prompt: Focus the browser window.
+    commands:
+      - command: focus-application
+        name: Google Chrome
+  - prompt: Click on the "Why Code4Nord" link in the navigation bar.
+    commands:
+      - command: hover-text
+        text: Why Code4Nord
+        description: link in the navigation bar
+        action: click
+  - prompt: Assert that the correct section or page loads.
+    commands:
+      - command: assert
+        expect: Why Code4Nord section is visible
+  - prompt: >-
+      Repeat steps for "What We Offer" and "Our Customers" links.  # Use the
+      content of the file from the environment
+    commands:
+      - command: hover-text
+        text: What We Offer
+        description: link in the navigation bar
+        action: click
+      - command: hover-text
+        text: Our Customers
+        description: link in the navigation bar
+        action: click
