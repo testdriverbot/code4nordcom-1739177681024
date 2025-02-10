@@ -1,0 +1,23 @@
+version: 4.2.12
+session: 67a9c0de31b15921b0938ea5
+steps:
+  - prompt: Focus the browser window.
+    commands:
+      - command: focus-application
+        name: Google Chrome
+  - prompt: Assert that the "View Our Favourite Projects" button is visible.
+    commands:
+      - command: assert
+        expect: the "View Our Favourite Projects" button is visible
+  - prompt: Click on the "View Our Favourite Projects" button.
+    commands:
+      - command: hover-text
+        text: VIEW OUR FAVOURITE PROJECTS
+        description: button to view favorite projects
+        action: click
+  - prompt: >-
+      Assert that it navigates to the correct section or page.  # Use the
+      content of the file from the environment
+    commands:
+      - command: assert
+        expect: the page title is "Our Customers - Code4Nord"
