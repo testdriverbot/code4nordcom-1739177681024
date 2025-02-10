@@ -1,0 +1,23 @@
+version: 4.2.12
+session: 67a9c0de39d28eca2b0a44f3
+steps:
+  - prompt: Focus the browser window.
+    commands:
+      - command: focus-application
+        name: Google Chrome
+  - prompt: Assert that the "Contact Us" link is visible on the navigation bar.
+    commands:
+      - command: assert
+        expect: the "Contact Us" link is visible on the navigation bar
+  - prompt: Click on the "Contact Us" link.
+    commands:
+      - command: hover-text
+        text: Contact Us
+        description: contact us link in the navigation bar
+        action: click
+  - prompt: >-
+      Assert that it takes the user to the contact page.  # Use the content of
+      the file from the environment
+    commands:
+      - command: assert
+        expect: the "Contact Us" header is visible on the page
